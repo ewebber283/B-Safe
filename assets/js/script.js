@@ -7,3 +7,15 @@ fetch(
     .then(function(data) {
     console.log(data);
     });
+
+    https://covid-19.dataflowkit.com/v1
+
+fetch(
+    'https://covid-19.dataflowkit.com/v1'
+)
+    .then(function(response) {
+    return response.json();
+    })
+    .then(function(data) {
+    console.log(data);
+    });
