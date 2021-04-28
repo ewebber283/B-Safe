@@ -1,8 +1,8 @@
 :root {
     --red-wine: #5c1d1c;
     --burgundy: #6d2827;
-    --dasty-rose: #b55f5f;
-    --dasty-pink: #e99f91;
+    --dusty-rose: #b55f5f;
+    --dusty-pink: #e99f91;
     --light-pink: #fff1ef;
     --beige: #f5e1c5;
 }
@@ -13,6 +13,13 @@
     font-family: 'Pathway Gothic One', sans-serif;
 }
 
+header *{
+    background-image: url(../images/hero.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 100%;
+}
 
 .logo {
     text-align: center;
@@ -27,5 +34,13 @@ a.navbar-item:hover {
     background-color: var(--red-wine);
     color: var(--beige);
     border-radius: 20px;
+}
+
+.hero * {
+    background-image: url(../images/hero.png);
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 100%;
 }
 
