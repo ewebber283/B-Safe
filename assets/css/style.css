@@ -1,0 +1,31 @@
+:root {
+    --red-wine: #5c1d1c;
+    --burgundy: #6d2827;
+    --dasty-rose: #b55f5f;
+    --dasty-pink: #e99f91;
+    --light-pink: #fff1ef;
+    --beige: #f5e1c5;
+}
+
+* {
+    background-color: var(--burgundy);
+    color: var(--beige);
+    font-family: 'Pathway Gothic One', sans-serif;
+}
+
+
+.logo {
+    text-align: center;
+    font-size: 48px;
+    padding-top: 5% ;
+}
+a.navbar-item {
+    color: var(--beige);
+}
+a.navbar-item:hover {
+    background-image: none;
+    background-color: var(--red-wine);
+    color: var(--beige);
+    border-radius: 20px;
+}
+
