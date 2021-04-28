@@ -13,6 +13,8 @@
     font-family: 'Pathway Gothic One', sans-serif;
 }
 
+
+/* ------------------- HEADER SECTION ---------------------- */
 header *{
     background-image: url(../images/hero.png);
     background-position: center;
@@ -36,6 +38,9 @@ a.navbar-item:hover {
     border-radius: 20px;
 }
 
+
+
+/* ------------------- HERO SECTION ---------------------- */
 .hero * {
     background-image: url(../images/hero.png);
     background-position: top;
@@ -44,3 +49,10 @@ a.navbar-item:hover {
     background-position: 100%;
 }
 
+
+
+
+/* ------------------- FOOTER SECTION ---------------------- */
+footer {
+    text-align: center;
+}
