@@ -1,0 +1,58 @@
+:root {
+    --red-wine: #5c1d1c;
+    --burgundy: #6d2827;
+    --dusty-rose: #b55f5f;
+    --dusty-pink: #e99f91;
+    --light-pink: #fff1ef;
+    --beige: #f5e1c5;
+}
+
+* {
+    background-color: var(--burgundy);
+    color: var(--beige);
+    font-family: 'Pathway Gothic One', sans-serif;
+}
+
+
+/* ------------------- HEADER SECTION ---------------------- */
+header *{
+    background-image: url(../images/hero.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 100%;
+}
+
+.logo {
+    text-align: center;
+    font-size: 48px;
+    padding-top: 5% ;
+}
+a.navbar-item {
+    color: var(--beige);
+}
+a.navbar-item:hover {
+    background-image: none;
+    background-color: var(--red-wine);
+    color: var(--beige);
+    border-radius: 20px;
+}
+
+
+
+/* ------------------- HERO SECTION ---------------------- */
+.hero * {
+    background-image: url(../images/hero.png);
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 100%;
+}
+
+
+
+
+/* ------------------- FOOTER SECTION ---------------------- */
+footer {
+    text-align: center;
+}
