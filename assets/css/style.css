@@ -50,7 +50,21 @@ a.navbar-item:hover {
 }
 
 
+/* --------------------SEARCH Section ----------------------- */
+.country-name {
+    font-size: 28px;
+    text-align: center;
+    font-weight: bold;
+}
 
+.button {
+    margin: 0;
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
 
 /* ------------------- FOOTER SECTION ---------------------- */
 footer {
