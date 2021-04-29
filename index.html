@@ -1,20 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>B.Safe</title>
-  </head>
-  <body>
-      <div>
-        <h1>Let's search based on country</h1>
-        Search term: <input type="text" id="searchTerm"  />
-        <button onclick ='function myFunction()'>Search!</button>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>b.safe</title>
+</head>
+<body>
+    <!--   HEADER SECTION   -->
+    <header>
+        <h1 class="logo">B.SAFE</h1>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-menu">
+                <div class="navbar-start navbar-end">
+                    <a class="navbar-item">HOME</a>
+                    <a href="#search-section" class="navbar-item">SEARCH</a>
+                    <a href="#report-section" class="navbar-item">GUIDELINE</a>
+                    <a href="#sign-up-section" class="navbar-item">SIGN-UP FOR UPDATES</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--   HERO SECTION   -->
+    <div id="hero-section">
+        <section class="hero is-halfheight">
+            <div class="hero-body">
+                <div class="columns">
+                    <p class="column is-6 is-offset-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam id commodi ipsam nihil quo, excepturi reiciendis repellendus, perspiciatis nesciunt cumque veritatis. Consequatur, natus? Voluptates rerum deleniti quos temporibus, ipsam natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, enim? Exercitationem esse odio voluptate praesentium a. Porro inventore repellat corporis minus. Molestias corporis fugit tenetur ipsam nemo suscipit est sunt.</p>
+                </div>
+            </div>
+        </section>
     </div>
-    <div>
-        <h2>Showing Cases for: <span id="country-search-term"></span></h2>
-        <div id="country-container"></div>
-      </div>
-    <script src="assets/js/script.js"></script>
-  </body>
+
+    <!--   SEARCH SECTION   -->
+    <div class="columns id="search-section">
+        <div class="column is-6 is-offset-3">
+            <h1 class="country-name">Country Name</h1>
+            <input class="input is-focused" type="text" id="searchTerm" />
+            <button class="button is-small is-inverted">Search!</button>
+        </div>
+    </div>
+
+    <!--   REPORT SECTION   -->
+    <div id="report-section">
+
+    </div>
+
+    <!--   SIGN-UP SECTION   -->
+    <div id="sign-up-section">
+
+    </div>
+
+    <!--   FOOTER SECTION   -->
+    <footer>
+        <p class="column is-2 is-offset-5"> &copy; 2021 The Greatest Team, Inc.</p>
+    </footer>
+
+        <script src="assets/js/script.js"></script>
+</body>
 </html>
