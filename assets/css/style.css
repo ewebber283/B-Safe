@@ -55,15 +55,6 @@ a.navbar-item:hover {
     text-align: center;
     font-weight: bold;
 }
-
-.button {
-    margin: 0;
-    position: fixed;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 /* ------------------- FOOTER SECTION ---------------------- */
 footer {
     text-align: center;
