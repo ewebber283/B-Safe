@@ -56,6 +56,11 @@ a.navbar-item:hover {
     text-align: center;
     font-weight: bold;
 }
+
+figure {
+    margin-top: 35px;
+}
+
 /* ------------------- FOOTER SECTION ---------------------- */
 footer {
     text-align: center;
