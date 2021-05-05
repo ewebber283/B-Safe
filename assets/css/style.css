@@ -11,7 +11,7 @@
     background-color: var(--burgundy);
     color: var(--light-pink);
     font-family: 'Pathway Gothic One', sans-serif;
-    background-image: url(../images/hero.png);
+    background-image: url(../images/hero1.jpg);
     background-position: top;
     background-size: cover;
     background-attachment: fixed;
@@ -20,18 +20,11 @@
 
 
 /* ------------------- HEADER SECTION ---------------------- */
-header *{
-    background-image: url(../images/hero.png);
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: 100%;
-}
 
 .logo {
     text-align: center;
     font-size: 58px;
-    padding-top: 5% ;
+    padding-top: 50px ;
     font-family: Viga, sans-serif;
     color: var(--beige);
 }
@@ -164,11 +157,13 @@ figure {
 #sign-up-section button {
     margin-top: 10px;
     border-radius: 20px;
-    padding: 10px 50px;
+    padding: 7px 70px;
     background-image: unset;
     background-color: var(--beige);
     color: var(--red-wine);
     border: none;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 18px;
 }
 
 #sign-up-section input {
