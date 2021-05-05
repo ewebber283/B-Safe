@@ -14,14 +14,15 @@
 
 
 
-var searchBtn = document.querySelector('#search-btn')
-searchBtn.addEventListener('click', searchOnClick)
+var searchBtn = document.querySelector('#search-form')
+searchBtn.addEventListener('submit', searchOnClick)
 
 function searchOnClick() {
     var userInput = upperFirst(document.getElementById('search-term').value)
     console.log(userInput)  
     apiRequests(userInput) 
 
+    document.getElementById('report-section').style.height = 'auto'
 }
 
 function apiRequests(userInput) {

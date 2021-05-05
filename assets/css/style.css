@@ -9,8 +9,13 @@
 
 * {
     background-color: var(--burgundy);
-    color: var(--beige);
+    color: var(--light-pink);
     font-family: 'Pathway Gothic One', sans-serif;
+    background-image: url(../images/hero.png);
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 100%;
 }
 
 
@@ -25,11 +30,19 @@ header *{
 
 .logo {
     text-align: center;
-    font-size: 48px;
+    font-size: 58px;
     padding-top: 5% ;
+    font-family: Viga, sans-serif;
+    color: var(--beige);
 }
+.b {
+    color: var(--dusty-pink);
+    font-family: Viga, sans-serif;
+}
+
 a.navbar-item {
     color: var(--beige);
+    font-size: 22px;
 }
 a.navbar-item:hover {
     background-image: none;
@@ -41,20 +54,49 @@ a.navbar-item:hover {
 
 
 /* ------------------- HERO SECTION ---------------------- */
-.hero * {
-    background-image: url(../images/hero.png);
-    background-position: top;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: 100%;
+
+.hero-body p {
+    text-align: center;
+    margin: auto;
+    color: var(--light-pink);
+    font-size: 18px;
 }
 
 
 /* --------------------SEARCH Section ----------------------- */
+#search-section {
+    margin: auto;
+}
+
 .country-name {
     font-size: 24px;
     text-align: center;
-    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--beige);
+}
+form {
+    text-align: center;
+}
+.button{
+    margin-top: 20px;
+    background-image: unset;
+    background-color: var(--beige);
+    padding: 20px 70px;
+    font-family: 'Pathway Gothic One', sans-serif;
+    color: var(--red-wine);
+}
+.button.is-small:not(.is-rounded) {
+    border-radius: 40px;
+}
+.button.is-small {
+    font-size: 18px;
+}
+
+#search-term {
+    border-radius: 15px;
+    background-image: unset;
+    background-color: var(--light-pink);
+    width: 500px;
 }
 
 /* -------------------REPORT SECTION-------------------------*/
@@ -62,25 +104,27 @@ a.navbar-item:hover {
 #report-section {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    padding-top: 40px;
 }
 
 #numbers {
     margin: 40px 40px 40px 100px;
     line-height: 2em;
+    font-size: 18px;
+    color: var(--light-pink);
 }
 
 
-/* --------------------  GRAPH  -----------------------------*/
+/* - - - - - - - - - -  graph  - - - - - - - - - - */
 #chartDiv {
     width:50%; 
-    height:200px;
+    height:250px;
 }
 #chartDiv div svg g g g g g g g g g g g g {
     fill: var(--beige);
 }
 #chartDiv div svg g g path{
-    fill: transparent
+    fill: transparent;
 }
 #chartDiv div svg g g g g g g g g g g path{
     fill: var(--dusty-pink);
@@ -97,25 +141,44 @@ a.navbar-item:hover {
 }
 
 
-
-/* --------------------   MAP   -----------------------------*/
+/* - - - - - - - - - -  map  - - - - - - - - - - */
 figure {
-    margin-top: 35px;
+    margin: 60px 0;
 }
 
 /* -------------------SIGN-UP SECTION-------------------------*/
 .sign-up {
-    width:50%;
+    width:40%;
+    
 }
 
-.sign-up h1 {
+.sign-up h2 {
     font-size: 24px;
+    color: var(--beige);
 }
 
-.btn {
-    margin-top: 10px;
+.sign-up p {
+    margin: 30px 0;
 }
+
+#sign-up-section button {
+    margin-top: 10px;
+    border-radius: 20px;
+    padding: 10px 50px;
+    background-image: unset;
+    background-color: var(--beige);
+    color: var(--red-wine);
+    border: none;
+}
+
+#sign-up-section input {
+    background-image: unset;
+    background-color: var(--light-pink);
+}
+
+
 /* ------------------- FOOTER SECTION ---------------------- */
 footer {
     text-align: center;
+    margin-top: 70px;
 }
