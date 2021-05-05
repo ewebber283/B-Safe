@@ -2,7 +2,7 @@
     --red-wine: #5c1d1c;
     --burgundy: #6d2827;
     --dusty-rose: #b55f5f;
-    --dusty-pink: #e99f91;
+    --dusty-pink: #e99f90;
     --light-pink: #fff1ef;
     --beige: #f5e1c5;
 }
@@ -57,7 +57,48 @@ a.navbar-item:hover {
     font-weight: bold;
 }
 
-/* --------------------MAP SECTION-----------------------------*/
+/* -------------------REPORT SECTION-------------------------*/
+
+#report-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+#numbers {
+    margin: 40px 40px 40px 100px;
+    line-height: 2em;
+}
+
+
+/* --------------------  GRAPH  -----------------------------*/
+#chartDiv {
+    width:50%; 
+    height:200px;
+}
+#chartDiv div svg g g g g g g g g g g g g {
+    fill: var(--beige);
+}
+#chartDiv div svg g g path{
+    fill: transparent
+}
+#chartDiv div svg g g g g g g g g g g path{
+    fill: var(--dusty-pink);
+    stroke: var(--dusty-rose);
+}
+#chartDiv div svg g g g g g g g g g g g g path {
+    fill: none;
+}
+#chartDiv div svg g g:nth-child(1) {
+    fill: transparent;
+}
+#chartDiv div svg g g g g g g g g path {
+    stroke: none;
+}
+
+
+
+/* --------------------   MAP   -----------------------------*/
 figure {
     margin-top: 35px;
 }

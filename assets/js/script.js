@@ -100,10 +100,6 @@ function printCaseData (country) {
             }
         ]
     });
-
-
-
-
 }
 
 function printVaccineData (vaccines) {
