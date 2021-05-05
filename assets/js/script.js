@@ -20,7 +20,8 @@ searchBtn.addEventListener('click', searchOnClick)
 function searchOnClick() {
     var userInput = upperFirst(document.getElementById('search-term').value)
     console.log(userInput)  
-    apiRequests(userInput)  
+    apiRequests(userInput) 
+
 }
 
 function apiRequests(userInput) {
@@ -49,37 +50,60 @@ function apiRequests(userInput) {
             return response.json()
             })
             .then(function(vaccines) {
-            console.log(vaccines)
+            //console.log(vaccines)
             printVaccineData(vaccines)
             })
 
             
 }
 
-
 function upperFirst(string) {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
 }
 
 function printCaseData (country) {
-    var reportSecction = document.querySelector('#report-section')
-        reportSecction.innerHTML = ''
+    var numbers = document.querySelector('#numbers')
+        numbers.innerHTML = ''
 
-    var reportEl = $('<div>').addClass('numbers')
         if (country["Active Cases_text"] === '') {
             var noDataActive = ('<p id="active-cases">Active Cases: no data</p>')
         } else {
-            var activeCases = ('<p id="active-cases">Active Cases: ' + country["Active Cases_text"] + '</p>')
+            var actCaseNum = country["Active Cases_text"]
+            var activeCases = ('<p id="active-cases">Active Cases: ' + actCaseNum + '</p>')
         }
 
         if(country["New Cases_text"] === ''){
-            var noDataNew = ('<p id="active-cases">Active Cases: no data</p>')
+            var noDataNew = ('<p id="active-cases">New Cases: no data</p>')
         } else {
-            var newCases = ('<p id="new-cases">New Cases: ' + country["New Cases_text"] + '</p>')
+            var newCaseNum = country["New Cases_text"]
+            var newCases = ('<p id="new-cases">New Cases: ' + newCaseNum + '</p>')
         }
 
-    $('#report-section').append(reportEl)
-    reportEl.append(activeCases, newCases, noDataActive, noDataNew)
+    $('#numbers').append(activeCases, newCases, noDataActive, noDataNew)
+
+
+    var totalCaseNum = country['Total Cases_text']
+    var totalRecovNum = country['Total Recovered_text']
+    var totalDeaths = country['Total Deaths_text']
+
+
+    JSC.Chart('chartDiv', {
+        type: 'horizontal column',
+        series: [
+            {
+                points: [
+                {x: 'Total Cases', y: parseInt(totalCaseNum.replace(/,/g, '')) },
+                {x: 'Total Recovered', y: parseInt(totalRecovNum.replace(/,/g, '')) },
+                {x: 'Active Cases', y: parseInt(actCaseNum.replace(/,/g, '')) },
+                {x: 'Total Deaths', y: parseInt(totalDeaths.replace(/,/g, '')) },
+                ]
+            }
+        ]
+    });
+
+
+
+
 }
 
 function printVaccineData (vaccines) {
@@ -95,25 +119,31 @@ function printVaccineData (vaccines) {
         var partiallyVaccinated = $('<p id="vaccinated">Partially Vaccinated: ' + vaccines.All.people_partially_vaccinated + '</p>')
     }
 
-    $('#report-section').append(fullyVaccinated, partiallyVaccinated, noDataFully, noDataPartially)
+    $('#numbers').append(fullyVaccinated, partiallyVaccinated, noDataFully, noDataPartially)
 }
+
+
+
+
+
+
 var signUpButton = document.getElementById('btn')
 
 signUpButton.addEventListener('click', function(event) {
     event.preventDefault();
-  
+
     var name = document.getElementById('contact-name').value;
     var email = document.getElementById('contact-email').value;
-  
+
     if (name === '') {
-      alert('Name cannot be blank');
+        alert('Name cannot be blank');
     } else if (email === '') {
-      alert('Email cannot be blank');
+        alert('Email cannot be blank');
     } else {
-      alert('Registered successfully');
-  
-      localStorage.setItem('name', name);
-      localStorage.setItem('email', email);
+        alert('Registered successfully');
+
+        localStorage.setItem('name', name);
+        localStorage.setItem('email', email);
 
     }
 })
