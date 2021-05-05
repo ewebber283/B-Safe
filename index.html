@@ -33,7 +33,7 @@
         <section class="hero is-halfheight">
             <div class="hero-body">
                 <div class="columns">
-                    <p class="column is-6 is-offset-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam id commodi ipsam nihil quo, excepturi reiciendis repellendus, perspiciatis nesciunt cumque veritatis. Consequatur, natus? Voluptates rerum deleniti quos temporibus, ipsam natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, enim? Exercitationem esse odio voluptate praesentium a. Porro inventore repellat corporis minus. Molestias corporis fugit tenetur ipsam nemo suscipit est sunt.</p>
+                    <p class="column is-12 is-offset-5"></p>
                 </div>
             </div>
         </section>
@@ -42,10 +42,10 @@
     <!--   SEARCH SECTION   -->
     <div class="columns id="search-section">
         <div class="column is-6 is-offset-3">
-            <h1 class="country-name">Country Name</h1>
+            <h1 class="country-name">Search for a country below to see the number of cases and vaccinated residents:</h1>
             <input class="input is-focused" type="text" id="search-term" />
             <div class="has-text-centered">
-                <button id="search-btn" class="button is-small is-inverted">Search!</button>
+                <button id="search-btn" class="button is-small is-inverted" placeholder="Country Name">Search!</button>
             </div>
         </div>
     </div>
@@ -59,8 +59,17 @@
         <iframe src="https://ourworldindata.org/grapher/total-cases-covid-19?tab=map" width="100%" height="500px"></iframe>
     </figure>
     <!--   SIGN-UP SECTION   -->
-    <div id="sign-up-section">
-
+    <div class="has-text-centered sign-up container" id="sign-up-section">
+        <h1>Sign Up for Updates!</h1>
+        <form>
+            <label for="contact-name">Your Name</label>
+            <input id="contact-name" class="input is-small is-rounded" type="text" placeholder="Your Name" />
+            <label for="email">Email Address</label>
+            <input id="contact-email" class="input is-small is-rounded" placeholder="Email Address"></input>
+            <div class="btn" id="btn">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
     </div>
 
     <!--   FOOTER SECTION   -->

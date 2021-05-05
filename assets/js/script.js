@@ -36,3 +36,23 @@ function searchOnClick() {
             }});
 }
 
+var signUpButton = document.getElementById('btn')
+
+signUpButton.addEventListener('click', function(event) {
+    event.preventDefault();
+  
+    var name = document.getElementById('contact-name').value;
+    var email = document.getElementById('contact-email').value;
+  
+    if (name === '') {
+      alert('Name cannot be blank');
+    } else if (email === '') {
+      alert('Email cannot be blank');
+    } else {
+      alert('Registered successfully');
+  
+      localStorage.setItem('name', name);
+      localStorage.setItem('email', email);
+
+    }
+})
