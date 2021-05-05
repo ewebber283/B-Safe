@@ -52,15 +52,28 @@ a.navbar-item:hover {
 
 /* --------------------SEARCH Section ----------------------- */
 .country-name {
-    font-size: 28px;
+    font-size: 24px;
     text-align: center;
     font-weight: bold;
 }
 
+/* --------------------MAP SECTION-----------------------------*/
 figure {
     margin-top: 35px;
 }
 
+/* -------------------SIGN-UP SECTION-------------------------*/
+.sign-up {
+    width:50%;
+}
+
+.sign-up h1 {
+    font-size: 24px;
+}
+
+.btn {
+    margin-top: 10px;
+}
 /* ------------------- FOOTER SECTION ---------------------- */
 footer {
     text-align: center;
