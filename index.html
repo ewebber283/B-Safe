@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&family=Viga&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 
     <title>b.safe</title>
@@ -14,13 +15,12 @@
 <body>
     <!--   HEADER SECTION   -->
     <header>
-        <h1 class="logo">B.SAFE</h1>
+        <h1 class="logo"><span class="b">B</span>.SAFE</h1>
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-menu">
                 <div class="navbar-start navbar-end">
                     <a class="navbar-item">HOME</a>
                     <a href="#search-section" class="navbar-item">SEARCH</a>
-                    <a href="#report-section" class="navbar-item">GUIDELINE</a>
                     <a href="#map" class="navbar-item">HEAT MAP</a>
                     <a href="#sign-up-section" class="navbar-item">SIGN-UP FOR UPDATES</a>
                 </div>
@@ -32,26 +32,29 @@
     <div id="hero-section">
         <section class="hero is-halfheight">
             <div class="hero-body">
-                <div class="columns">
-                    <p class="column is-12 is-offset-5"></p>
-                </div>
+                    <p>
+                        Walking into 2020, we thought we’d be traveling the world. </br>
+                        Instead, we traveled from the kitchen to the living room on repeat.</br> 
+                        But after months of staying home, travel is starting to rebound and we’re excited to get back out there. </br></br>
+                        However, it won’t look quite like it did before.</br> 
+                        From increased health and safety measures you are not quite familiar with, to your personal concerns about the COVID cases increase. </br>
+                        Travel prep becomes such a hassle. And that's where B.SAFE app steps in!
+                    </p>
             </div>
         </section>
     </div>
 
     <!--   SEARCH SECTION   -->
     <div class="columns" id="search-section">
-        <div class="column is-6 is-offset-3">
+        <form action="#search-section" id="search-form" class="column is-6 is-offset-3">
             <h1 class="country-name">Search for a country below to see the number of cases and vaccinated residents:</h1>
-            <input class="input is-focused" type="text" id="search-term" />
-            <div class="has-text-centered">
-                <button id="search-btn" class="button is-small is-inverted" placeholder="Country Name">Search!</button>
-            </div>
-        </div>
+            <input class="input is-focused" type="text" id="search-term" placeholder="Enter City Name" />
+            <button type="submit" id="search-btn" class="button is-small is-inverted">SEARCH</button>
+        </form>
     </div>
 
     <!--   REPORT SECTION   -->
-    <div id="report-section">
+    <div id="report-section" style="height: 10px;">
         <div id="numbers"></div>
         <div id="chart"> 
             <div id="chartDiv"></div>
@@ -64,15 +67,14 @@
     </figure>
     <!--   SIGN-UP SECTION   -->
     <div class="has-text-centered sign-up container" id="sign-up-section">
-        <h1>Sign Up for Updates!</h1>
+        <h2>Sign Up for Updates!</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis consequatur excepturi officia qui, repudiandae molestias id eum ut consequuntur praesentium animi optio? Consectetur adipisci ipque.</p>
         <form>
             <label for="contact-name">Your Name</label>
             <input id="contact-name" class="input is-small is-rounded" type="text" placeholder="Your Name" />
             <label for="email">Email Address</label>
             <input id="contact-email" class="input is-small is-rounded" placeholder="Email Address"></input>
-            <div class="btn" id="btn">
-                <button type="submit">Submit</button>
-            </div>
+            <button type="submit" class="btn" id="btn">SUBMIT</button>
         </form>
     </div>
 
