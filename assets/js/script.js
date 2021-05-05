@@ -11,7 +11,7 @@
     https://covid-19.dataflowkit.com/v1 */
 
 
-
+var inputEl = document.querySelector('#search-term')
 
 
 var searchBtn = document.querySelector('#search-form')
@@ -22,7 +22,6 @@ function searchOnClick() {
     console.log(userInput)  
     apiRequests(userInput) 
 
-    document.getElementById('report-section').style.height = 'auto'
 }
 
 function apiRequests(userInput) {
@@ -40,6 +39,8 @@ function apiRequests(userInput) {
             } else {
                 console.log(cases)
                 printCaseData(cases)
+                document.getElementById('report-section').style.height = 'auto'
+                inputEl.value = ''
             }}
         )
 
