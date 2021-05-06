@@ -132,15 +132,18 @@ signUpButton.addEventListener('click', function(event) {
 
     var name = document.getElementById('contact-name').value;
     var email = document.getElementById('contact-email').value;
-
+    var destination = document.getElementById('destination').value;
     if (name === '') {
         alert('Name cannot be blank');
     } else if (email === '') {
+        alert('Email cannot be blank');
+    } else if (destination === '') {
         alert('Email cannot be blank');
     } else {
         alert('Registered successfully');
 
         localStorage.setItem('name', name);
+        localStorage.setItem('country', destination)
         localStorage.setItem('email', email);
 
     }
