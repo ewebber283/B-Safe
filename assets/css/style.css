@@ -177,3 +177,12 @@ footer {
     text-align: center;
     margin-top: 70px;
 }
+
+/* ------------------ MOBILE----------------------------------*/
+
+@media screen and (max-width: 575px) {
+    #sign-up-section button {
+        font-size: 10px;
+        padding: 10px 50px;
+    }
+}
