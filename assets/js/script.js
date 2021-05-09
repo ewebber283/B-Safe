@@ -13,6 +13,17 @@
 
 var inputEl = document.querySelector('#search-term')
 
+var modalEl = document.querySelector('.modal')
+var modalClose = document.querySelector('.modal-close')
+    modalClose.onclick = function() {
+        modalEl.style.display = 'none'
+    }
+    window.onclick = function(event) {
+        console.log(event)
+        if (event.target.className === 'modal-background') {
+            modalEl.style.display = 'none'
+        }
+    }
 
 var searchBtn = document.querySelector('#search-form')
 searchBtn.addEventListener('submit', searchOnClick)
@@ -21,7 +32,6 @@ function searchOnClick() {
     var userInput = upperFirst(document.getElementById('search-term').value)
     console.log(userInput)  
     apiRequests(userInput) 
-
 }
 
 function apiRequests(userInput) {
@@ -35,7 +45,9 @@ function apiRequests(userInput) {
             })
             .then(function(cases) {
             if (userInput !==  cases.Country_text) {
-                alert('Please enter a valid country name.')
+                modalEl.style.display = 'flex'
+                $('.modal-content').text('Please enter a valid country name.')
+                return
             } else {
                 console.log(cases)
                 printCaseData(cases)
@@ -134,13 +146,20 @@ signUpButton.addEventListener('click', function(event) {
     var email = document.getElementById('contact-email').value;
     var destination = document.getElementById('destination').value;
     if (name === '') {
-        alert('Name cannot be blank');
+        modalEl.style.display = 'flex'
+        $('.modal-content').text('Name cannot be blank')
+        return
     } else if (email === '') {
-        alert('Email cannot be blank');
+        modalEl.style.display = 'flex'
+        $('.modal-content').text('Email cannot be blank')
+        return
     } else if (destination === '') {
-        alert('Email cannot be blank');
+        modalEl.style.display = 'flex'
+        $('.modal-content').text('Please enter a county name')
+        return
     } else {
-        alert('Registered successfully');
+        modalEl.style.display = 'flex'
+        $('.modal-content').text('Registered successfully')
 
         localStorage.setItem('name', name);
         localStorage.setItem('country', destination)
@@ -148,3 +167,4 @@ signUpButton.addEventListener('click', function(event) {
 
     }
 })
+
