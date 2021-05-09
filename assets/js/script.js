@@ -188,8 +188,8 @@ function createBtn (country) {
     var button = $('<button type="button" class="btn" data-attribute="' + country.toLowerCase() + '">' + country + '</button>')
     $('#btn-group').append(button)
     //debugger
-}/2020-12-01'
-)
+} '2020-12-01'
+
     .then(function(response) {
     return response.json();
 
@@ -207,3 +207,4 @@ var featuredCountryClick = function(event) {
 }
 var countryBtn = document.querySelector('#btn-group')
 countryBtn.addEventListener('click', featuredCountryClick)
+    })
