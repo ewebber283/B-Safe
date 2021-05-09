@@ -41,9 +41,13 @@ function apiRequests(userInput) {
                 document.getElementById('report-section').style.height = 'auto'
                 inputEl.value = ''
                 countryList.push(userInput)
-                localStorage.setItem('countryList', JSON.stringify(countryList));
-                showText()
-                createBtn(userInput)
+                if (countryList.some((val, i) => countryList.indexOf(val) !== i)) {
+                    return
+                } else {
+                    localStorage.setItem('countryList', JSON.stringify(countryList));
+                    showText()    
+                    createBtn(userInput)
+                }
             }}
         )
 
@@ -61,6 +65,8 @@ function apiRequests(userInput) {
 
             
 }
+
+
 
 function upperFirst(string) {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
@@ -173,3 +179,13 @@ function showText () {
     var text = document.getElementById('featured-countries-text')
     text.textContent = ('Click the button below to see results for your featured country:')
 }
+
+var featuredCountryClick = function(event) {
+    var country = event.target.getAttribute('data-attribute')
+    if (country) {
+        apiRequests(upperFirst(country))
+        console.log(country)
+    }
+}
+var countryBtn = document.querySelector('#btn-group')
+countryBtn.addEventListener('click', featuredCountryClick)
