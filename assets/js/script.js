@@ -21,7 +21,6 @@ function searchOnClick() {
     var userInput = upperFirst(document.getElementById('search-term').value)
     console.log(userInput)  
     apiRequests(userInput) 
-
 }
 
 function apiRequests(userInput) {
@@ -41,7 +40,9 @@ function apiRequests(userInput) {
                 printCaseData(cases)
                 document.getElementById('report-section').style.height = 'auto'
                 inputEl.value = ''
-            }}
+                checkDuplicatesAndPush(userInput)
+                }
+            }
         )
 
     // fetching vaccines info
@@ -52,11 +53,23 @@ function apiRequests(userInput) {
             return response.json()
             })
             .then(function(vaccines) {
-            //console.log(vaccines)
+            console.log(vaccines)
             printVaccineData(vaccines)
             })
+}
 
-            
+function checkDuplicatesAndPush (country) {
+    countryList.push(country)
+
+    if (countryList.every((e, i, a) => a.indexOf(e) === i)) {
+        console.log('no dupl')
+        localStorage.setItem('countryList', JSON.stringify(countryList))
+        showText()
+        createBtn(country)
+    } else {
+        console.log('has dupl')
+        countryList.pop()
+    }
 }
 
 function upperFirst(string) {
@@ -142,9 +155,41 @@ signUpButton.addEventListener('click', function(event) {
     } else {
         alert('Registered successfully');
 
-        localStorage.setItem('name', name);
-        localStorage.setItem('country', destination)
-        localStorage.setItem('email', email);
-
+        userInfo = []
+        userInfo.push(name, destination,email)
+        localStorage.setItem('userInfo', JSON.stringify(userInfo));
     }
 })
+
+function loadFromLocalStorage(){
+    countryList = JSON.parse(localStorage.getItem("countryList"))
+    if (!countryList) {
+        countryList = []
+    } else {
+        showText()
+        for (var i = 0; i < countryList.length; i++){    
+            createBtn(countryList[i])
+    }}
+}
+loadFromLocalStorage()
+
+function createBtn (country) {
+    var button = $('<button type="button" class="btn" data-attribute="' + country.toLowerCase() + '">' + country + '</button>')
+    $('#btn-group').append(button)
+    //debugger
+}
+
+function showText () {
+    var text = document.getElementById('featured-countries-text')
+    text.textContent = ('Click the button below to see results for your featured country:')
+}
+
+var featuredCountryClick = function(event) {
+    var country = event.target.getAttribute('data-attribute')
+    if (country) {
+        apiRequests(upperFirst(country))
+        console.log(country)
+    }
+}
+var countryBtn = document.querySelector('#btn-group')
+countryBtn.addEventListener('click', featuredCountryClick)
