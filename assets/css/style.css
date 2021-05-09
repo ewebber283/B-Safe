@@ -201,3 +201,21 @@ footer {
         padding: 10px 50px;
     }
 }
+
+.modal-content {
+    background-image: unset;
+    background-color: var(--light-pink);
+    color:var(--red-wine);
+    font-size: 20px;
+    padding: 40px;
+    width: 300px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.modal-background {
+    background-image: unset;
+}
+.modal {
+    background: transparent;
+}

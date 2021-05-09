@@ -1,18 +1,19 @@
-/* fetch(
-    'https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/date-range/2020-09-01/2020-12-01'
-)
-    .then(function(response) {
-    return response.json();
-    })
-    .then(function(data) {
-    console.log(data);
-    });
 
-    https://covid-19.dataflowkit.com/v1 */
 
 
 var inputEl = document.querySelector('#search-term')
 
+var modalEl = document.querySelector('.modal')
+var modalClose = document.querySelector('.modal-close')
+    modalClose.onclick = function() {
+        modalEl.style.display = 'none'
+    }
+    window.onclick = function(event) {
+        console.log(event)
+        if (event.target.className === 'modal-background') {
+            modalEl.style.display = 'none'
+        }
+    }
 
 var searchBtn = document.querySelector('#search-form')
 searchBtn.addEventListener('submit', searchOnClick)
@@ -34,7 +35,9 @@ function apiRequests(userInput) {
             })
             .then(function(cases) {
             if (userInput !==  cases.Country_text) {
-                alert('Please enter a valid country name.')
+                modalEl.style.display = 'flex'
+                $('.modal-content').text('Please enter a valid country name.')
+                return
             } else {
                 console.log(cases)
                 printCaseData(cases)
@@ -147,19 +150,27 @@ signUpButton.addEventListener('click', function(event) {
     var email = document.getElementById('contact-email').value;
     var destination = document.getElementById('destination').value;
     if (name === '') {
-        alert('Name cannot be blank');
+        modalEl.style.display = 'flex'
+        $('.modal-content').text('Name cannot be blank')
+        return
     } else if (email === '') {
-        alert('Email cannot be blank');
+        modalEl.style.display = 'flex'
+        $('.modal-content').text('Email cannot be blank')
+        return
     } else if (destination === '') {
-        alert('Email cannot be blank');
+        modalEl.style.display = 'flex'
+        $('.modal-content').text('Please enter a county name')
+        return
     } else {
-        alert('Registered successfully');
+        modalEl.style.display = 'flex'
+        $('.modal-content').text('Registered successfully')
 
         userInfo = []
         userInfo.push(name, destination,email)
         localStorage.setItem('userInfo', JSON.stringify(userInfo));
     }
 })
+
 
 function loadFromLocalStorage(){
     countryList = JSON.parse(localStorage.getItem("countryList"))
@@ -177,7 +188,10 @@ function createBtn (country) {
     var button = $('<button type="button" class="btn" data-attribute="' + country.toLowerCase() + '">' + country + '</button>')
     $('#btn-group').append(button)
     //debugger
-}
+}/2020-12-01'
+)
+    .then(function(response) {
+    return response.json();
 
 function showText () {
     var text = document.getElementById('featured-countries-text')
