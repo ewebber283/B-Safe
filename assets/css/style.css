@@ -92,6 +92,21 @@ form {
     width: 500px;
 }
 
+#featured-countries {
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+#btn-group .btn{
+    margin: 10px 1px;
+    background-color: var(--red-wine);
+    background-image: unset;
+    color: var(--beige);
+    padding: 4px 15px;
+    border-radius: 5px;
+    border: unset;
+}
+
 /* -------------------REPORT SECTION-------------------------*/
 
 #report-section {
