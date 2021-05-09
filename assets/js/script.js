@@ -40,15 +40,9 @@ function apiRequests(userInput) {
                 printCaseData(cases)
                 document.getElementById('report-section').style.height = 'auto'
                 inputEl.value = ''
-                countryList.push(userInput)
-                if (countryList.some((val, i) => countryList.indexOf(val) !== i)) {
-                    return
-                } else {
-                    localStorage.setItem('countryList', JSON.stringify(countryList));
-                    showText()    
-                    createBtn(userInput)
+                checkDuplicatesAndPush(userInput)
                 }
-            }}
+            }
         )
 
     // fetching vaccines info
@@ -62,11 +56,21 @@ function apiRequests(userInput) {
             console.log(vaccines)
             printVaccineData(vaccines)
             })
-
-            
 }
 
+function checkDuplicatesAndPush (country) {
+    countryList.push(country)
 
+    if (countryList.every((e, i, a) => a.indexOf(e) === i)) {
+        console.log('no dupl')
+        localStorage.setItem('countryList', JSON.stringify(countryList))
+        showText()
+        createBtn(country)
+    } else {
+        console.log('has dupl')
+        countryList.pop()
+    }
+}
 
 function upperFirst(string) {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
