@@ -36,6 +36,7 @@
 a.navbar-item {
     color: var(--beige);
     font-size: 22px;
+    text-align: center;
 }
 a.navbar-item:hover {
     background-image: none;
@@ -77,6 +78,10 @@ form {
     padding: 20px 70px;
     font-family: 'Pathway Gothic One', sans-serif;
     color: var(--red-wine);
+    box-shadow: 0px 0px 20px 2px var(--red-wine);
+}
+.button:hover {
+    padding: 20px 65px;
 }
 .button.is-small:not(.is-rounded) {
     border-radius: 40px;
@@ -89,7 +94,6 @@ form {
     border-radius: 15px;
     background-image: unset;
     background-color: var(--light-pink);
-    width: 500px;
 }
 
 #featured-countries {
@@ -111,22 +115,30 @@ form {
 
 #report-section {
     display: flex;
-    justify-content: center;
     padding-top: 40px;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
 }
 
 #numbers {
-    margin: 40px 40px 40px 100px;
+    margin-left: 100px;
     line-height: 2em;
     font-size: 18px;
     color: var(--light-pink);
+    flex: 0 0 35%;
 }
 
 
 /* - - - - - - - - - -  graph  - - - - - - - - - - */
+#chart {
+    flex: 0 0 65%;
+}
+
 #chartDiv {
-    width:50%; 
-    height:250px;
+    width:100%; 
+    height:200px;
 }
 #chartDiv div svg g g g g g g g g g g g g {
     fill: var(--beige);
@@ -139,7 +151,7 @@ form {
     stroke: var(--dusty-rose);
 }
 #chartDiv div svg g g g g g g g g g g g g path {
-    fill: none;
+    fill: var(--burgundy);
 }
 #chartDiv div svg g g:nth-child(1) {
     fill: transparent;
@@ -151,7 +163,7 @@ form {
 
 /* - - - - - - - - - -  map  - - - - - - - - - - */
 figure {
-    margin: 60px 0;
+    margin-bottom: 60px;
 }
 
 /* -------------------SIGN-UP SECTION-------------------------*/
@@ -179,6 +191,10 @@ figure {
     border: none;
     font-family: 'Pathway Gothic One', sans-serif;
     font-size: 18px;
+    box-shadow: 0px 0px 20px 2px var(--red-wine);
+}
+#sign-up-section button:hover {
+    padding: 7px 65px;
 }
 
 #sign-up-section input {
@@ -195,13 +211,49 @@ footer {
 
 /* ------------------ MOBILE----------------------------------*/
 
-@media screen and (max-width: 575px) {
-    #sign-up-section button {
-        font-size: 10px;
-        padding: 10px 50px;
+@media screen and (max-width: 980px){
+#report-section {
+    display: block;
+    padding-top: 0;
+}
+#numbers {
+    margin: auto;
+    text-align: center;
+}
+#chart {
+    margin: auto;
+    width: 80%;
+}
+}
+
+@media screen and (max-width: 768px){
+    #chart {
+        width: 100%;
+    }
+    #sign-up-section {
+        width: 80%;
     }
 }
 
+@media screen and (max-width: 575px) {
+    #sign-up-section button {
+        font-size: 14px;
+        padding: 10px 50px;
+    }
+    #sign-up-section {
+        width: 90%;
+    }
+    #report-section {
+        width: 100%;
+    }
+    #chart {
+        width: 100%;
+    }
+}
+
+
+
+/* ------------------ MODALS ------------------------------- */
 .modal-content {
     background-image: unset;
     background-color: var(--light-pink);
