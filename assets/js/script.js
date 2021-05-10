@@ -1,6 +1,3 @@
-
-
-
 var inputEl = document.querySelector('#search-term')
 
 var modalEl = document.querySelector('.modal')
@@ -9,7 +6,6 @@ var modalClose = document.querySelector('.modal-close')
         modalEl.style.display = 'none'
     }
     window.onclick = function(event) {
-        console.log(event)
         if (event.target.className === 'modal-background') {
             modalEl.style.display = 'none'
         }
@@ -19,8 +15,7 @@ var searchBtn = document.querySelector('#search-form')
 searchBtn.addEventListener('submit', searchOnClick)
 
 function searchOnClick() {
-    var userInput = upperFirst(document.getElementById('search-term').value)
-    console.log(userInput)  
+    var userInput = upperFirst(document.getElementById('search-term').value) 
     apiRequests(userInput) 
 }
 
@@ -39,7 +34,6 @@ function apiRequests(userInput) {
                 $('.modal-content').text('Please enter a valid country name.')
                 return
             } else {
-                console.log(cases)
                 printCaseData(cases)
                 document.getElementById('report-section').style.height = 'auto'
                 inputEl.value = ''
@@ -56,7 +50,6 @@ function apiRequests(userInput) {
             return response.json()
             })
             .then(function(vaccines) {
-            console.log(vaccines)
             printVaccineData(vaccines)
             })
 }
@@ -65,12 +58,10 @@ function checkDuplicatesAndPush (country) {
     countryList.push(country)
 
     if (countryList.every((e, i, a) => a.indexOf(e) === i)) {
-        console.log('no dupl')
         localStorage.setItem('countryList', JSON.stringify(countryList))
         showText()
         createBtn(country)
     } else {
-        console.log('has dupl')
         countryList.pop()
     }
 }
@@ -137,10 +128,6 @@ function printVaccineData (vaccines) {
 }
 
 
-
-
-
-
 var signUpButton = document.getElementById('btn')
 
 signUpButton.addEventListener('click', function(event) {
@@ -187,11 +174,7 @@ loadFromLocalStorage()
 function createBtn (country) {
     var button = $('<button type="button" class="btn" data-attribute="' + country.toLowerCase() + '">' + country + '</button>')
     $('#btn-group').append(button)
-    //debugger
-} '2020-12-01'
-
-    .then(function(response) {
-    return response.json();
+}
 
 function showText () {
     var text = document.getElementById('featured-countries-text')
@@ -202,9 +185,7 @@ var featuredCountryClick = function(event) {
     var country = event.target.getAttribute('data-attribute')
     if (country) {
         apiRequests(upperFirst(country))
-        console.log(country)
     }
 }
 var countryBtn = document.querySelector('#btn-group')
 countryBtn.addEventListener('click', featuredCountryClick)
-    })
